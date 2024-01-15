@@ -3,15 +3,16 @@ import { gql } from "graphql-tag";
 const typeDefs = gql`
   type Query {
     getCursos: [Curso]
-    getCursoById(id: Int!): Curso
+    getCursoById(id: String!): Curso
     getPagos: [Pago]
     getPagoById(id: ID!): Pago
+    getPagosByCurso(IdCurso: String!): [Pago]
   }
 
   type Mutation {
     createCurso(input: CursoInput): Curso
-    updateCurso(id: Int!, input: CursoInput): Curso
-    deleteCurso(id: Int!): Curso
+    updateCurso(id: String!, input: CursoInput): Curso
+    deleteCurso(id: String!): Curso
     createPago(input: PagoInput): Pago
     updatePago(id: ID!, input: PagoInput): Pago
     deletePago(id: ID!): Pago
@@ -25,7 +26,7 @@ const typeDefs = gql`
 
   input PagoInput {
     concepto: String
-    IdCurso: Int
+    IdCurso: String
     monto: Float
     persona: String
   }
@@ -40,7 +41,7 @@ const typeDefs = gql`
   type Pago {
     _id: ID!
     concepto: String
-    IdCurso: Int
+    IdCurso: String
     monto: Float
     persona: String
   }

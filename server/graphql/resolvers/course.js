@@ -1,6 +1,4 @@
-// src/resolvers/coursesResolvers.js
-
-import Curso  from "../../models/course.js";
+import Curso from "../../models/course.js";
 
 const coursesResolvers = {
   Query: {

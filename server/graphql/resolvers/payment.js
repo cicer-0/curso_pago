@@ -8,6 +8,9 @@ const paymentsResolvers = {
     getPagoById: async (_, { id }) => {
       return await Pago.findById(id);
     },
+    getPagosByCurso: async (_, { IdCurso }) => {
+      return await Pago.find({ IdCurso });
+    },
   },
   Mutation: {
     createPago: async (_, { input }) => {

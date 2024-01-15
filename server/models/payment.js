@@ -5,7 +5,7 @@ const paymentDB = await connectPaymentsDB();
 
 const pagoSchema = new mongoose.Schema({
   concepto: String,
-  IdCurso: Number,
+  IdCurso: String,
   monto: Number,
   persona: String,
 });
